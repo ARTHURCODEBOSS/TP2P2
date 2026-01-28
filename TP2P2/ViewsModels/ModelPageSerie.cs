@@ -15,7 +15,7 @@ namespace TP2P2.ViewsModels
         public ModelPageSerie()
         {
 			Service = new WSService();
-            Series = new ObservableCollection<Serie> (Service.GetSeriesAsync("serie").Result);
+            Series = new ObservableCollection<Serie> (Service.GetSeriesAsync("series").Result);
         }
 
         private ObservableCollection<Serie> series;
