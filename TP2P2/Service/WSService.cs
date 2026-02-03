@@ -39,6 +39,17 @@ namespace TP2P2.Service
                 return null;
             }
         }
+        public async Task<Serie> PostSeriesAsync(Serie serie)
+        {
+            try
+            {
+                return await Client.PostAsJsonAsync<Serie>("series", serie).Result.Content.ReadFromJsonAsync<Serie>();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
 
     }
 }

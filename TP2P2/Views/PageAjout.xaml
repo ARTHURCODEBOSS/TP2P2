@@ -11,11 +11,12 @@
 
     <StackPanel Spacing="15" Width="400">
 
-        <TextBox x:Name="BoxTitre" Header="Titre" PlaceholderText="Titre de la série"/>
+        <TextBox x:Name="BoxTitre" Header="Titre" PlaceholderText="Titre de la série" Text="{Binding Serie.Titre, Mode=TwoWay}"/>
 
-        <TextBox x:Name="BoxResume" Header="Résumé" 
+        <TextBox x:Name="BoxResume" Header="Résumé"
                  Height="100" TextWrapping="Wrap" AcceptsReturn="True" 
-                 PlaceholderText="Résumé de la série"/>
+                 PlaceholderText="Résumé de la série"
+                 Text="{Binding Serie.Resume, Mode=TwoWay}"/>
 
         <Grid ColumnSpacing="15">
             <Grid.ColumnDefinitions>
@@ -23,13 +24,17 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <NumberBox Grid.Column="0" x:Name="BoxSaisons" Header="Nb Saisons" Value="1" SpinButtonPlacementMode="Inline"/>
-            <NumberBox Grid.Column="1" x:Name="BoxEpisodes" Header="Nb Épisodes" Value="1" SpinButtonPlacementMode="Inline"/>
+            <NumberBox Grid.Column="0" x:Name="BoxSaisons" Header="Nb Saisons" Value="{Binding Serie.Nbsaisons, Mode=TwoWay}" SpinButtonPlacementMode="Inline"/>
+            <NumberBox Grid.Column="1" x:Name="BoxEpisodes" Header="Nb Épisodes" Value="{Binding Serie.Nbepisodes, Mode=TwoWay}" SpinButtonPlacementMode="Inline"/>
         </Grid>
 
-        <NumberBox x:Name="BoxAnnee" Header="Année création" Value="2024" SpinButtonPlacementMode="Inline"/>
+        <NumberBox x:Name="BoxAnnee" Header="Année création" Value="{Binding Serie.Anneecreation, Mode=TwoWay}" SpinButtonPlacementMode="Inline"/>
 
-        <TextBox x:Name="BoxNetwork" Header="Chaîne" PlaceholderText="Ex: HBO, Netflix..."/>
+        <TextBox x:Name="BoxNetwork" Header="Chaîne" PlaceholderText="Ex: HBO, Netflix..." Text="{Binding Serie.Network, Mode=TwoWay}"/>
+
+        
 
     </StackPanel>
+    
+    
 </Page>
