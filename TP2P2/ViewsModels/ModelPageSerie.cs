@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Microsoft.UI.Xaml.Controls;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -6,16 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 using TP2P1.Models.EntityFramework;
 using TP2P2.Service;
+using TP2P2.Views;
 
 namespace TP2P2.ViewsModels
 {
-    public class ModelPageSerie
+    public class ModelPageSerie : ObservableObject
     {
+        public Action? ActionOuvrirDialog { get; set; }
+        public IRelayCommand BtnAjout { get; }
 
         public ModelPageSerie()
         {
 			Service = new WSService();
-            Series = new ObservableCollection<Serie> (Service.GetSeriesAsync("series").Result);
+            GetDataOnLoadAsync();
+            BtnAjout = new RelayCommand(() => ActionOuvrirDialog?.Invoke());
+
+        }
+        
+        private async void GetDataOnLoadAsync()
+        {
+            var resultat = await service.GetSeriesAsync("series");
+            Series = new ObservableCollection<Serie>(resultat);
         }
 
         private ObservableCollection<Serie> series;
@@ -23,7 +37,7 @@ namespace TP2P2.ViewsModels
 		public ObservableCollection<Serie> Series
         {
 			get { return series; }
-			set { series = value; }
+			set { SetProperty(ref series, value);}
 		}
 
 		private WSService service;
