@@ -32,9 +32,11 @@
 
         <TextBox x:Name="BoxNetwork" Header="Chaîne" PlaceholderText="Ex: HBO, Netflix..." Text="{Binding Serie.Network, Mode=TwoWay}"/>
 
-        
+        <Button Content="Ajouter" 
+                Command="{Binding CommandeValide}"
+                HorizontalAlignment="Stretch"
+                Margin="0,20,0,0"
+                Style="{StaticResource AccentButtonStyle}"/>
 
     </StackPanel>
-    
-    
 </Page>

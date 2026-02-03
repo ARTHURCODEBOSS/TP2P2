@@ -26,7 +26,7 @@ namespace TP2P2.ViewsModels
 
         }
         
-        private async void GetDataOnLoadAsync()
+        public async void GetDataOnLoadAsync()
         {
             var resultat = await service.GetSeriesAsync("series");
             Series = new ObservableCollection<Serie>(resultat);

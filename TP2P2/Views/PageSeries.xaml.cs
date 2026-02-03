@@ -28,22 +28,20 @@ namespace TP2P2.Views
         {
             this.InitializeComponent();
 
-            // 1. On crée le ViewModel
             var viewModel = new TP2P2.ViewsModels.ModelPageSerie();
 
-            // 2. On lui donne le code du dialogue (car ici XamlRoot existe !)
             viewModel.ActionOuvrirDialog = async () =>
             {
                 ContentDialog dialog = new ContentDialog();
-                dialog.XamlRoot = this.XamlRoot; // <--- C'est ici que ça marche
+                dialog.XamlRoot = this.XamlRoot;
                 dialog.Title = "Ajouter";
                 dialog.CloseButtonText = "Fermer";
                 dialog.Content = new PageAjout();
 
                 await dialog.ShowAsync();
+                viewModel.GetDataOnLoadAsync();
             };
 
-            // 3. On attache le ViewModel à la page
             this.DataContext = viewModel;
         }
     }

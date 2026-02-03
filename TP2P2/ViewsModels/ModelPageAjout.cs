@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,9 @@ using TP2P2.Service;
 
 namespace TP2P2.ViewsModels
 {
-    public class ModelPageAjout
+    public class ModelPageAjout:ObservableObject
     {
+       
         public IRelayCommand CommandeValide { get; }
         public ModelPageAjout()
         {
@@ -21,13 +23,15 @@ namespace TP2P2.ViewsModels
         public async void ActionValider()
         {
             var resultat = await service.PostSeriesAsync(Serie);
+            Serie = new Serie();
         }
         private Serie serie;
 
 		public Serie Serie
 		{
 			get { return serie; }
-			set { serie = value; }
+			set { SetProperty(ref serie, value); }
+        
 		}
         private WSService service;
 
