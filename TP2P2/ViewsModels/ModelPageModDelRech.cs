@@ -28,12 +28,13 @@ namespace TP2P2.ViewsModels
             CommandeSupprimer = new RelayCommand(ActionSuppression);
         }
 
-        public void ActionSuppression()
+        public async void ActionSuppression()
         {
             if (Serie != null && Serie.Serieid == IdSerieRecherche)
             {
-                var result = Service.DeleteSeriesAsync(Serie.Serieid);
-                if (result.Result)
+                var result = await Service.DeleteSeriesAsync(Serie.Serieid);
+
+                if (result) // result est directement un booléen ici
                 {
                     GetDataOnLoadAsync();
                     Serie = new Serie();
