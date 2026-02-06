@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36212.18 d17.14
+VisualStudioVersion = 17.14.36212.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP2P2", "TP2P2\TP2P2.csproj", "{30A49329-A81B-4424-8DDB-C81B0AD85300}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP2P2Tests", "TP2P2Tests\TP2P2Tests.csproj", "{CFFFD794-A343-4B53-885C-E702C2B6165B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,18 @@ Global
 		{30A49329-A81B-4424-8DDB-C81B0AD85300}.Release|x86.ActiveCfg = Release|x86
 		{30A49329-A81B-4424-8DDB-C81B0AD85300}.Release|x86.Build.0 = Release|x86
 		{30A49329-A81B-4424-8DDB-C81B0AD85300}.Release|x86.Deploy.0 = Release|x86
+		{CFFFD794-A343-4B53-885C-E702C2B6165B}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{CFFFD794-A343-4B53-885C-E702C2B6165B}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{CFFFD794-A343-4B53-885C-E702C2B6165B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CFFFD794-A343-4B53-885C-E702C2B6165B}.Debug|x64.Build.0 = Debug|Any CPU
+		{CFFFD794-A343-4B53-885C-E702C2B6165B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CFFFD794-A343-4B53-885C-E702C2B6165B}.Debug|x86.Build.0 = Debug|Any CPU
+		{CFFFD794-A343-4B53-885C-E702C2B6165B}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{CFFFD794-A343-4B53-885C-E702C2B6165B}.Release|ARM64.Build.0 = Release|Any CPU
+		{CFFFD794-A343-4B53-885C-E702C2B6165B}.Release|x64.ActiveCfg = Release|Any CPU
+		{CFFFD794-A343-4B53-885C-E702C2B6165B}.Release|x64.Build.0 = Release|Any CPU
+		{CFFFD794-A343-4B53-885C-E702C2B6165B}.Release|x86.ActiveCfg = Release|Any CPU
+		{CFFFD794-A343-4B53-885C-E702C2B6165B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

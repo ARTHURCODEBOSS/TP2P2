@@ -33,9 +33,9 @@ namespace TP2P2.ViewsModels
 			set { SetProperty(ref serie, value); }
         
 		}
-        private WSService service;
+        private IWSService service;
 
-        public WSService Service
+        public IWSService Service
         {
             get { return service; }
             set { service = value; }

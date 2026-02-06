@@ -10,7 +10,7 @@ using TP2P1.Models.EntityFramework;
 
 namespace TP2P2.Service
 {
-    public class WSService
+    public class WSService: IWSService
     {
         private HttpClient client;
 
