@@ -51,5 +51,32 @@ namespace TP2P2.Service
             }
         }
 
+        public async Task<bool> PutSeriesAsync(Serie serie)
+        {
+            try
+            {
+                var response = await Client.PutAsJsonAsync($"series/{serie.Serieid}", serie);
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> DeleteSeriesAsync(int id)
+        {
+            try
+            {
+                var response = await Client.DeleteAsync($"series/{id}");
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        
+
     }
 }

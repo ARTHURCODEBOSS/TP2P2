@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TP2P2.ViewsModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
@@ -26,6 +27,8 @@ namespace TP2P2.Views
         public PageModDelRech()
         {
             InitializeComponent();
+            ModelPageModDelRech model = new ModelPageModDelRech();
+            this.DataContext = model;
         }
     }
 }

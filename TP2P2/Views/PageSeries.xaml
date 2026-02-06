@@ -22,8 +22,8 @@
                 Command="{Binding BtnAjout}"/>
 
         <Button Grid.Row="0" 
-        Content="Ajouter une série" 
-        Margin="10" 
+        Content="Mod rech etc" 
+        Margin="50" 
         HorizontalAlignment="Left"
         Command="{Binding BtnModDelRech}"/>
 

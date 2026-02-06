@@ -8,43 +8,51 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Spacing="15" Width="400">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
 
-        <TextBlock Text="numero de serie a rechercher" FontSize="20" FontWeight="Bold" Margin="0,0,0,20"/>
-        <TextBox x:Name="BoxTitre" Header="Titre" PlaceholderText="Titre de la série" Text="{Binding Serie.Titre, Mode=TwoWay}"/>
-        <Button Content="Rechercher" 
-            Command="{Binding CommandeRecherche}"
-            HorizontalAlignment="Stretch"
-            Margin="0,0,0,20"
-            Style="{StaticResource AccentButtonStyle}"/>
+        <StackPanel Spacing="15" Width="400" Padding="0,0,15,0">
 
+            <TextBox x:Name="BoxidRecherche" Header="Numéro de série à rechercher" PlaceholderText="ID de la série" Text="{Binding IdSerieRecherche, Mode=TwoWay}"/>
 
-        <TextBox x:Name="BoxTitre" Header="Titre" PlaceholderText="Titre de la série" Text="{Binding Serie.Titre, Mode=TwoWay}"/>
+            <Button Content="Rechercher" 
+                Command="{Binding CommandeRecherche}"
+                HorizontalAlignment="Stretch"
+                Margin="0,0,0,20"
+                Style="{StaticResource AccentButtonStyle}"/>
 
-        <TextBox x:Name="BoxResume" Header="Résumé"
-             Height="100" TextWrapping="Wrap" AcceptsReturn="True" 
-             PlaceholderText="Résumé de la série"
-             Text="{Binding Serie.Resume, Mode=TwoWay}"/>
+            <TextBox x:Name="BoxTitre" Header="Titre" PlaceholderText="Titre de la série" Text="{Binding Serie.Titre, Mode=TwoWay}"/>
 
-        <Grid ColumnSpacing="15">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <TextBox x:Name="BoxResume" Header="Résumé"
+                 Height="100" TextWrapping="Wrap" AcceptsReturn="True" 
+                 PlaceholderText="Résumé de la série"
+                 Text="{Binding Serie.Resume, Mode=TwoWay}"/>
 
-            <NumberBox Grid.Column="0" x:Name="BoxSaisons" Header="Nb Saisons" Value="{Binding Serie.Nbsaisons, Mode=TwoWay}" SpinButtonPlacementMode="Inline"/>
-            <NumberBox Grid.Column="1" x:Name="BoxEpisodes" Header="Nb Épisodes" Value="{Binding Serie.Nbepisodes, Mode=TwoWay}" SpinButtonPlacementMode="Inline"/>
-        </Grid>
+            <Grid ColumnSpacing="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-        <NumberBox x:Name="BoxAnnee" Header="Année création" Value="{Binding Serie.Anneecreation, Mode=TwoWay}" SpinButtonPlacementMode="Inline"/>
+                <NumberBox Grid.Column="0" x:Name="BoxSaisons" Header="Nb Saisons" Value="{Binding Serie.Nbsaisons, Mode=TwoWay}" SpinButtonPlacementMode="Inline"/>
+                <NumberBox Grid.Column="1" x:Name="BoxEpisodes" Header="Nb Épisodes" Value="{Binding Serie.Nbepisodes, Mode=TwoWay}" SpinButtonPlacementMode="Inline"/>
+            </Grid>
 
-        <TextBox x:Name="BoxNetwork" Header="Chaîne" PlaceholderText="Ex: HBO, Netflix..." Text="{Binding Serie.Network, Mode=TwoWay}"/>
+            <NumberBox x:Name="BoxAnnee" Header="Année création" Value="{Binding Serie.Anneecreation, Mode=TwoWay}" SpinButtonPlacementMode="Inline"/>
 
-        <Button Content="Ajouter" 
-            Command="{Binding CommandeValide}"
-            HorizontalAlignment="Stretch"
-            Margin="0,20,0,0"
-            Style="{StaticResource AccentButtonStyle}"/>
+            <TextBox x:Name="BoxNetwork" Header="Chaîne" PlaceholderText="Ex: HBO, Netflix..." Text="{Binding Serie.Network, Mode=TwoWay}"/>
 
-    </StackPanel>
+            <Button Content="Modifier" 
+                Command="{Binding CommandeModifier}"
+                HorizontalAlignment="Stretch"
+                Margin="0,20,0,0"
+                Style="{StaticResource AccentButtonStyle}"/>
+
+            <Button Content="Supprimer" 
+                Command="{Binding CommandeSupprimer}"
+                HorizontalAlignment="Stretch"
+                Margin="0,20,0,0"
+                Style="{StaticResource AccentButtonStyle}"/>
+
+        </StackPanel>
+    </ScrollViewer>
 </Page>
