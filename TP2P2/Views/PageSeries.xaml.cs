@@ -42,6 +42,18 @@ namespace TP2P2.Views
                 viewModel.GetDataOnLoadAsync();
             };
 
+            viewModel.ActionOuvrirRechModDialog = async () =>
+            {
+                ContentDialog dialog = new ContentDialog();
+                dialog.XamlRoot = this.XamlRoot;
+                dialog.Title = "ModDelRech";
+                dialog.CloseButtonText = "Fermer";
+                dialog.Content = new PageModDelRech();
+
+                await dialog.ShowAsync();
+                viewModel.GetDataOnLoadAsync();
+            };
+
             this.DataContext = viewModel;
         }
     }

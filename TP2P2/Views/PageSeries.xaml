@@ -21,6 +21,12 @@
                 HorizontalAlignment="Left"
                 Command="{Binding BtnAjout}"/>
 
+        <Button Grid.Row="0" 
+        Content="Ajouter une série" 
+        Margin="10" 
+        HorizontalAlignment="Left"
+        Command="{Binding BtnModDelRech}"/>
+
         <controls:DataGrid Grid.Row="1" 
                            x:Name="DataGridSeries"
                            ItemsSource="{Binding Series}" 

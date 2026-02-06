@@ -16,14 +16,17 @@ namespace TP2P2.ViewsModels
     public class ModelPageSerie : ObservableObject
     {
         public Action? ActionOuvrirDialog { get; set; }
+        public Action? ActionOuvrirRechModDialog { get; set; }
+        
         public IRelayCommand BtnAjout { get; }
-
+        public IRelayCommand BtnModDelRech { get; }
+        
         public ModelPageSerie()
         {
 			Service = new WSService();
             GetDataOnLoadAsync();
             BtnAjout = new RelayCommand(() => ActionOuvrirDialog?.Invoke());
-
+            BtnModDelRech = new RelayCommand(() => ActionOuvrirRechModDialog?.Invoke());
         }
         
         public async void GetDataOnLoadAsync()
